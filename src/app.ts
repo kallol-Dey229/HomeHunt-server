@@ -22,7 +22,7 @@ app.use(
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(attachUser); // parses the token if present on every request, blocks nothing by itself
+app.use(attachUser);
 
 app.get("/", (_req, res) => {
   res.send("Hello World!");

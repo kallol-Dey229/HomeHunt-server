@@ -5,7 +5,7 @@ export interface Review {
   listingId: string;
   tenantId: string;
   tenantName: string;
-  rating: number; // 1-5, integer
+  rating: number; 
   comment?: string;
   createdAt: Date;
   updatedAt: Date;

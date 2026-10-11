@@ -17,7 +17,7 @@ export interface Listing {
   isAvailable: boolean;
   approvalStatus: "pending" | "approved" | "rejected";
   rejectionReason?: string;
-  ratingAverage: number; // cached, recomputed whenever a review changes
+  ratingAverage: number; 
   reviewCount: number;
   createdAt: Date;
   updatedAt: Date;
