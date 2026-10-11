@@ -12,8 +12,7 @@ function isValidObjectId(id: unknown): id is string {
   return typeof id === "string" && ObjectId.isValid(id);
 }
 
-// Attaches the related listing to each booking without a fragile $lookup
-// across string/ObjectId types — just two queries + an in-memory join.
+
 async function attachListings(db: Db, bookings: Booking[]) {
   const ids = [...new Set(bookings.map((b) => b.listingId))]
     .filter(isValidObjectId)

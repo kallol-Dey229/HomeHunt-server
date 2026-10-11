@@ -7,7 +7,6 @@ if (!AUTH_SERVER_URL) {
   throw new Error("Missing required environment variable: AUTH_SERVER_URL");
 }
 
-// Fetched once, cached, and auto-refreshed by jose as keys rotate
 const JWKS = createRemoteJWKSet(new URL(`${AUTH_SERVER_URL}/api/auth/jwks`));
 
 export interface AuthUser {

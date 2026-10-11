@@ -31,7 +31,6 @@ async function recomputeListingRating(listingId: string) {
     .updateOne({ _id: new ObjectId(listingId) }, { $set: { ratingAverage, reviewCount } });
 }
 
-// GET /api/reviews/listing/:listingId
 export async function getListingReviews(req: Request, res: Response): Promise<void> {
   const { listingId } = req.params;
   const db = getDb();
