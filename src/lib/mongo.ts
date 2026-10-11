@@ -7,9 +7,7 @@ if (!MONGODB_URI) {
   throw new Error("Missing required environment variable: MONGODB_URI");
 }
 
-/**
- * Single shared MongoClient for the whole app.
- */
+
 export const mongoClient = new MongoClient(MONGODB_URI);
 export const db = mongoClient.db();
 
