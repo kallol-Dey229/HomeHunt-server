@@ -17,7 +17,6 @@ export interface AuthUser {
 }
 
 declare global {
-  // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace Express {
     interface Request {
       user?: AuthUser;
@@ -46,7 +45,6 @@ async function verifyToken(authHeader: string | undefined): Promise<AuthUser | n
   }
 }
 
-// Attaches req.user if a valid token is present; does NOT block the request otherwise
 export async function attachUser(req: Request, res: Response, next: NextFunction) {
   req.user = (await verifyToken(req.headers.authorization)) ?? undefined;
   next();
