@@ -9,7 +9,7 @@ export interface Booking {
   ownerId: string;
   tenantName: string;
   tenantPhone: string;
-  moveInDate?: string; // ISO date string, e.g. "2026-08-01"
+  moveInDate?: string;
   message?: string;
   status: BookingStatus;
   createdAt: Date;
