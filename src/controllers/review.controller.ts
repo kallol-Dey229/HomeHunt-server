@@ -48,7 +48,6 @@ export async function getListingReviews(req: Request, res: Response): Promise<vo
   res.status(200).json({ reviews, average, count });
 }
 
-// POST /api/reviews — upsert: one review per tenant per listing
 export async function createOrUpdateReview(req: Request, res: Response): Promise<void> {
   const body = req.body as Partial<CreateReviewInput>;
 
