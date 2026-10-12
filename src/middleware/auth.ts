@@ -50,7 +50,7 @@ export async function attachUser(req: Request, res: Response, next: NextFunction
   next();
 }
 
-// Blocks the request entirely unless a valid token is present
+
 export async function requireAuth(req: Request, res: Response, next: NextFunction) {
   const user = await verifyToken(req.headers.authorization);
 
